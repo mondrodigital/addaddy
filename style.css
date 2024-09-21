@@ -1,0 +1,576 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    padding-bottom: 70px; /* Adjust this value based on the height of your banner */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+/* Update the main-nav styles */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00c4cc;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup-button {
+    background-color: #00c4cc;
+    color: #fff;
+}
+
+.login-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.signup-button:hover, .login-button:hover {
+    opacity: 0.9;
+}
+
+/* Remove or comment out the old nav styles if they exist */
+/*
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+*/
+
+.csv-upload-container {
+    margin-left: 15px;
+}
+
+.csv-upload-button {
+    background-color: #00c4cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.csv-upload-button:hover {
+    background-color: #00a0a6;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+    text-align: left; /* Align the filter sections to the left */
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-button {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button.active {
+    background-color: #00c4cc;
+    color: #fff;
+    border-color: #00c4cc;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.template-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1; /* Changed from 16 / 9 to 1 / 1 for square shape */
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+}
+
+.template-card img, .image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+}
+
+.template-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly lighter background by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease; /* Add transition for background-color */
+    color: white;
+    padding: 15px; /* Reduced padding */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.template-card:hover .template-overlay {
+    opacity: 1;
+}
+
+.open-canva-button {
+    background-color: #00c4cc;
+    color: #fff;
+    padding: 10px 20px; /* Increased from 8px 16px */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1em; /* Increased from 0.9em */
+    margin-top: 12px; /* Increased from 10px */
+}
+
+.open-canva-button:hover {
+    background-color: #00a0a6;
+}
+
+.open-canva-button i {
+    font-size: 0.9em; /* Increased from 0.8em */
+    margin-right: 4px; /* Increased from 3px */
+}
+
+.template-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 18px; /* Increased from 15px */
+    color: #fff;
+    font-size: 1.1em; /* Increased from 1em */
+    margin-bottom: 15px; /* Add space between filters and button */
+}
+
+.template-filters span {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more visible */
+    padding: 3px 8px; /* Slightly increased padding */
+    border-radius: 4px;
+    margin: 2px;
+    font-size: 0.8em; /* Increased from 0.7em */
+}
+
+/* Remove the following styles as they're no longer needed */
+/*
+.template-info {
+    padding: 15px;
+}
+
+.template-info h3 {
+    margin: 0;
+    color: #333;
+}
+*/
+
+.pro-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 196, 204, 0.9); /* Transparent teal */
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Add a blur effect for a modern look */
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.banner-content p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.email-form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin-left: 20px;
+}
+
+.email-input {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.subscribe-button {
+    background-color: #fff;
+    color: #00c4cc;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #00a0a6;
+    color: #fff;
+}
+
+.close-button-container {
+    margin-left: 20px;
+}
+
+.close-banner {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.close-banner:hover {
+    opacity: 0.7;
+}
+
+/* Add these new styles at the appropriate place in your CSS file */
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+}
+
+.hero-text h2 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #666;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.value-propositions {
+    margin-bottom: 30px;
+}
+
+.value-propositions p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.value-propositions i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.mockup-ad {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.ad-content {
+    text-align: center;
+}
+
+.ad-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ad-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.ad-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.ad-cta {
+    background-color: #00c4cc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.change-industry-button {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.change-industry-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mockup-container {
+        margin-top: 40px;
+    }
+}
+
+/* Update the existing nav styles */
+nav {
+    display: flex;
+    justify-content: flex-start; /* Changed from space-between to flex-start */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Remove these styles if they exist */
+.nav-links,
+.csv-upload-container {
+    display: none;
+}
+
+/* Rest of your CSS remains the same */
+
+.template-title {
+    font-size: 1.4em; /* Increased from 1.2em */
+    margin-bottom: 8px; /* Increased from 5px */
+    color: #fff; /* Ensure the title is white */
+    max-height: 2.8em; /* Adjusted for new font size */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.template-description {
+    font-size: 1em; /* Increased from 0.8em */
+    margin-bottom: 12px; /* Increased from 10px */
+    color: #fff; /* Ensure the description is white */
+    max-height: 4.5em; /* Adjusted for new font size */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.template-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: stretch; /* Change from center to stretch */
+}
+
+.open-canva-button,
+.copy-prompt-button {
+    background-color: #00c4cc;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    box-sizing: border-box;
+    line-height: 1;
+    margin: 0; /* Add this to remove any default margins */
+}
+
+.open-canva-button:hover,
+.copy-prompt-button:hover {
+    background-color: #00a0a6;
+}
+
+.open-canva-button i,
+.copy-prompt-button i {
+    font-size: 0.9em;
+    margin-right: 4px;
+}
+
+/* Ensure the anchor tag behaves like a button */
+.open-canva-button {
+    text-align: center;
+    line-height: 1;
+}
+
+.open-canva-button a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Template Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="path/to/your/logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <!-- Add this new button for CSV upload -->
+                <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+                <button onclick="document.getElementById('csvFileInput').click()">Upload CSV</button>
+                <!-- Existing nav links -->
+                <a href="#" class="active">Templates</a>
+                <a href="#">Pricing</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Rest of your existing HTML content -->
+
+    <script src="script.js"></script>
+</body>
+</html>

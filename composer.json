@@ -1,0 +1,6 @@
+{
+    "require": {
+        "sleiman/airtable-php": "^3.0",
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
